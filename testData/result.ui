@@ -105,9 +105,9 @@
   <widget class="QLabel" name="result">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>330</x>
      <y>230</y>
-     <width>341</width>
+     <width>471</width>
      <height>51</height>
     </rect>
    </property>
@@ -199,10 +199,10 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>440</y>
-     <width>81</width>
-     <height>17</height>
+     <x>310</x>
+     <y>430</y>
+     <width>101</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -219,13 +219,16 @@
    <property name="text">
     <string>СОВЕТ:</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="advice">
    <property name="geometry">
     <rect>
      <x>420</x>
      <y>390</y>
-     <width>411</width>
+     <width>451</width>
      <height>111</height>
     </rect>
    </property>

@@ -61,9 +61,9 @@
   <widget class="QLabel" name="q_numb">
    <property name="geometry">
     <rect>
-     <x>470</x>
+     <x>450</x>
      <y>230</y>
-     <width>156</width>
+     <width>211</width>
      <height>22</height>
     </rect>
    </property>
@@ -271,9 +271,9 @@
   <widget class="QLabel" name="time_limit">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>380</x>
      <y>280</y>
-     <width>290</width>
+     <width>331</width>
      <height>22</height>
     </rect>
    </property>
@@ -292,9 +292,9 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>380</x>
      <y>360</y>
-     <width>231</width>
+     <width>331</width>
      <height>22</height>
     </rect>
    </property>
