@@ -134,7 +134,7 @@ class AdviceWindow(QtWidgets.QWidget, adv.Ui_Form):
             self.phr[self.pos_phr] = text
 
     def readData(self):
-        with open(os.path.join(PATH, "testData", "adv.csv"), newline='') as csvfile:
+        with open(os.path.join(PATH, "testData", "adv.csv"), newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 if row["adv"] != "-":
@@ -148,7 +148,7 @@ class AdviceWindow(QtWidgets.QWidget, adv.Ui_Form):
         
     
     def writeData(self):
-        with open(os.path.join(PATH, "testData", "adv.csv"), 'w', newline='') as csvfile:
+        with open(os.path.join(PATH, "testData", "adv.csv"), 'w', newline='', encoding='utf-8') as csvfile:
             fieldnames = ["adv", "phr"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
@@ -237,6 +237,8 @@ class StartWindow(QtWidgets.QWidget, start.Ui_Form):
         self.palette = QtGui.QPalette()
         self.palette.setBrush(QtGui.QPalette.Window, QtGui.QBrush(self.img))
         self.setPalette(self.palette)
+
+        self.VAS.setText("")
 
         self.popup = InitPopup(self.get_count, isdigit=True)
         self.popup.label.setText("Количество вопросов")
@@ -402,6 +404,8 @@ class InitWindow(QtWidgets.QWidget, test_create.Ui_Form):
         self.palette.setBrush(QtGui.QPalette.Window, QtGui.QBrush(self.img))
         self.setPalette(self.palette)
 
+        self.VAS.setText("")
+
         self.step = 0
         self.pitch_size = 2
         self.time = None
@@ -523,7 +527,7 @@ class InitWindow(QtWidgets.QWidget, test_create.Ui_Form):
         self.popup.lineEdit.setText(self.file_name)
         
 
-        with open(fileName, newline='') as csvfile:
+        with open(fileName, newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
             rows = list(reader)
             ex = rows[0]
@@ -546,7 +550,7 @@ class InitWindow(QtWidgets.QWidget, test_create.Ui_Form):
     def data_output(self):
         #print("open output stream...")
         
-        with open(os.path.join(PATH, "testData", "source.csv"), 'w', newline='') as csvfile:
+        with open(os.path.join(PATH, "testData", "source.csv"), 'w', newline='', encoding='utf-8') as csvfile:
             fieldnames = ["name", "text", "q_1", "q_2", "q_3", "q_4", "ans", "time"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 

@@ -32,6 +32,8 @@ class StartWindow(QtWidgets.QWidget, init.Ui_Form):
 
         self.start_but.clicked.connect(self.buttHandler)
 
+        self.VAS.setText("")
+
         self.time = None
         self.sampleCount = None
 
@@ -104,6 +106,8 @@ class ResultWin(QtWidgets.QWidget, result.Ui_Form):
 
         self.butt.clicked.connect(self.btnHandler)
 
+        self.VAS.setText("")
+
         self.adv = None
         self.ans = None
         self.userChoice = None
@@ -141,7 +145,7 @@ class ResultWin(QtWidgets.QWidget, result.Ui_Form):
     def loadAdvices(self):
         path = os.path.abspath(os.curdir)
         path = os.path.split(path)[0]
-        with open(os.path.join(path, "testData", "adv.csv"), newline='') as csvfile:
+        with open(os.path.join(path, "testData", "adv.csv"), newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
             adv, phr = [], []
             for row in reader:
@@ -237,6 +241,8 @@ class QuestForm(QtWidgets.QWidget, quest.Ui_Form):
         self.btn_group.addButton(self.fourth_ans)
         self.pushButton.clicked.connect(self.nextStep)
         self.pushButton_2.clicked.connect(self.prevStep)
+
+        self.VAS.setText("")
 
         self.Qtimer = None
         self.testData = []
